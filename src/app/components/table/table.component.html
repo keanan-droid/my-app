@@ -1,0 +1,61 @@
+<div class="container" >
+    <div>
+        <form *ngIf="this.show" [formGroup]="newBookForm" (ngSubmit)="updateBook()">
+            <div class='form-group'>
+                <input type="text" class='form-control' formControlName="Title" id='Title' placeholder='Please enter the title'
+                />
+            </div>
+        
+            <div class='form-group'>
+                <input type="text" class='form-control' formControlName="Author" id='Author' placeholder='Please enter the author'
+                />
+            </div>
+        
+            <div class='form-group'>
+                <input type="text" class='form-control' formControlName="Issue" id='Issue' placeholder='Please enter the issue'
+                />
+            </div>
+        
+            <div class='form-group'>
+                <input type="text" class='form-control' formControlName="Date" id='Date' placeholder='Please enter the date'
+                />
+            </div>
+        
+            <div class='form-group'>
+                <input type="text" class='form-control' formControlName="State" id='State' placeholder='Please enter the state'
+                />
+            </div>
+        
+            <div class='form-group'>
+                <button type="submit" class="btn btn-info col-2"> UPDATE</button>
+            </div>
+        </form>
+    </div>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Index</th>
+                <th scope="col">Title</th>
+                <th scope="col">Author</th>
+                <th scope="col">Issue</th>
+                <th scope="col">Date</th>
+                <th scope="col">State</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor='let book of this.readData;let i = index'>
+                <td>{{book.id}}</td>
+                <td>{{book.title}}</td>
+                <td>{{book.author}}</td>
+                <td>{{book.issue}}</td>
+                <td>{{book.date}}</td>
+                <td>{{book.state}}</td>
+                <td>
+                    <fa-icon (click)="this.show = !this.show" [icon]="faEdit" class="btn-edit"></fa-icon>
+                    <fa-icon (click)="deleteBook()" [icon]="faTimes" class="btn-delete"></fa-icon>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

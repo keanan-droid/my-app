@@ -1,0 +1,34 @@
+
+<div class="container">
+    <form [formGroup]="bookForm" (ngSubmit)="bookSubmit()">
+        <div class='form-group'>
+            <input type="text" class='form-control' formControlName="Title" id='Title' placeholder='Please enter the title'
+            />
+        </div>
+    
+        <div class='form-group'>
+            <input type="text" class='form-control' formControlName="Author" id='Author' placeholder='Please enter the author'
+            />
+        </div>
+    
+        <div class='form-group'>
+            <input type="text" class='form-control' formControlName="Issue" id='Issue' placeholder='Please enter the issue'
+            />
+        </div>
+    
+        <div class='form-group'>
+            <input type="text" class='form-control' formControlName="Date" id='Date' placeholder='Please enter the date'
+            />
+        </div>
+    
+        <div class='form-group'>
+            <input type="text" class='form-control' formControlName="State" id='State' placeholder='Please enter the state'
+            />
+        </div>
+    
+        <div class='form-group'>
+            <button type="submit" class="btn btn-info col-2"> SUBMIT</button>
+        </div>
+        <p style="color: red;">{{errormsg}}</p>
+    </form>
+</div>
